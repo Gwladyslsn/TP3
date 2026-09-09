@@ -1,0 +1,23 @@
+info:
+  name: post
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:3000/tasks
+  body:
+    type: json
+    data: |
+      {
+          "id": 2,
+          "titre": "Tâche 2",
+          "statutCheck": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
