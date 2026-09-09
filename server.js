@@ -42,6 +42,17 @@ app.delete('/tasks/:id', (req, res) => {
     res.status(200).json({ message: 'Tache supprimée' });
 });
 
+// Route GET filter pour filtrer les tâches complété
+app.get('/tasks/completed', (req, res) => {
+    const task = tasks.filter(task => task.statutCheck === true)
+
+    console.log("Task completed: ", task)
+
+    res.status(200).json({
+        message: 'Filter ok',
+        task: task
+    });
+})
 
 
 app.listen(port, () => {
